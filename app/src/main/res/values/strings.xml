@@ -1,3 +1,5 @@
 <resources>
   <string name="app_name">Library</string>
+  <string name="tv_home">Home Activity</string>
+  <string name="name_company">King Of Fashion</string>
 </resources>

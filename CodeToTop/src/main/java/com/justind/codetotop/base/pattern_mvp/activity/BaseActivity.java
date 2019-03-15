@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -30,14 +31,13 @@ public abstract class BaseActivity<P extends BaseActivityContract.Presenter> ext
   }
 
   @Override
-  public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-    super.onCreate(savedInstanceState, persistentState);
+  public void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
     setContentView(getLayoutResourceID());
     mUnbinder = ButterKnife.bind(this);
     mPresenter = createPresenter();
     if (mPresenter != null)
       mPresenter.setView(this);
-
   }
 
   @Override
@@ -52,8 +52,9 @@ public abstract class BaseActivity<P extends BaseActivityContract.Presenter> ext
 
   @Override
   protected void onDestroy() {
+    if (mUnbinder != null)
+      mUnbinder.unbind();
     super.onDestroy();
-    mUnbinder.unbind();
   }
 
   @Override
