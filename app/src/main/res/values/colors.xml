@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="colorPrimary">#008577</color>
-  <color name="colorPrimaryDark">#00574B</color>
-  <color name="colorAccent">#8F0000</color>
-  <color name="ic_dribble_background">#F8FFFF</color>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDarkLogin">#001225</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#8F0000</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="ic_dribble_background">#F8FFFF</color>
+    <color name="color_login_screen_btn">#E66A00</color>
+    <color name="color_bg_view_in_login_screen">#33EBEBEB</color>
+    <color name="color_text_hint_login_screen">#80FFFFFF</color>
+    <color name="color_transparent">#00FFFFFF</color>
 </resources>

@@ -25,6 +25,11 @@ public class HomeActivity extends BaseActivity<HomeContract.Presenter> implement
   }
 
   @Override
+  protected void initView() {
+
+  }
+
+  @Override
   protected void onResume() {
     super.onResume();
   }

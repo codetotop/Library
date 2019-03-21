@@ -2,10 +2,8 @@ package com.justind.codetotop.base.pattern_mvp.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +15,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public abstract class BaseActivity<P extends BaseActivityContract.Presenter> extends AppCompatActivity
-    implements BaseActivityContract.View<P> {
+        implements BaseActivityContract.View<P> {
   P mPresenter;
   Unbinder mUnbinder;
 
@@ -36,9 +34,13 @@ public abstract class BaseActivity<P extends BaseActivityContract.Presenter> ext
     setContentView(getLayoutResourceID());
     mUnbinder = ButterKnife.bind(this);
     mPresenter = createPresenter();
-    if (mPresenter != null)
+    if (mPresenter != null){
       mPresenter.setView(this);
+      initView();
+    }
   }
+
+  protected abstract void initView();
 
   @Override
   protected void onResume() {
