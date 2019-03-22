@@ -8,7 +8,7 @@ import com.justind.library.pojo.model.Question;
 
 public class CacheHelper {
 
-  private static final String PREF_NAME = "com.dungnb.gem.projectcore";
+  private static final String PREF_NAME = "com.justind.library.common";
   private static final String KEY_QUESTION_JSON = "KEY_QUESTION_JSON";
   private static CacheHelper sInstance;
   private SharedPreferences mSharedPreferences;
