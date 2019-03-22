@@ -24,11 +24,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".screen.home.HomeActivity"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".screen.login.LoginActivity"
-            android:theme="@style/LoginTheme"
-            />
+            android:name=".screen.home.HomeActivity"  />
+        <activity
+            android:name=".screen.login.LoginActivity"
+            android:theme="@style/LoginTheme" />
     </application>
 
 </manifest>
