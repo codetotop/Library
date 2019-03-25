@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.justind.codetotop.base.pattern_mvp.activity.BaseActivity;
+import com.justind.codetotop.base.utils.AESEncrypt;
 import com.justind.codetotop.base.utils.ImageUtils;
 import com.justind.library.R;
 import com.justind.library.screen.home.HomeActivity;
@@ -58,6 +59,9 @@ public class LoginActivity extends BaseActivity<LoginContract.Presenter> impleme
   protected void initView() {
     ImageUtils.loadBlurImage(mImgBgLogin, R.drawable.bg_login, 8);
     setViewForSignInScreen();
+    String originalString = "codetotop";
+    String encryptedString = AESEncrypt.encrypt(originalString);
+    AESEncrypt.decrypt(encryptedString);
   }
 
   @OnClick({R.id.btnContinue, R.id.btnGetStart})
@@ -93,7 +97,7 @@ public class LoginActivity extends BaseActivity<LoginContract.Presenter> impleme
     mTvSignUp.setTextColor(getResources().getColor(R.color.colorWhite));
   }
 
-  public void setViewForSignUpScreen(){
+  public void setViewForSignUpScreen() {
     mTvSignUp.setBackgroundResource(R.drawable.bg_view_sign_up);
     mTvSignUp.setTextColor(getResources().getColor(R.color.color_login_screen_btn));
     mTvSignIn.setBackgroundColor(getResources().getColor(R.color.color_transparent));
